@@ -4,16 +4,16 @@ export default function Navbar(){
   return(
     <ul className="flex gap-8">
       <Link to={"/"}>
-      <li>Filmes</li>
+      <li className="hover:text-secondaryColor hover:text-xl transition-all">Filmes</li>
       </Link>
       <Link to={"/"}>
-      <li>Series</li>
+      <li className="hover:text-secondaryColor hover:text-xl transition-all">Series</li>
       </Link>
       <Link to={"/"}>
-      <li>Pessoas</li>
+      <li className="hover:text-secondaryColor hover:text-xl transition-all">Pessoas</li>
       </Link>
       <Link to={"/"}>
-      <li>Mais</li>
+      <li className="hover:text-secondaryColor hover:text-xl transition-all">Mais</li>
       </Link>
     </ul>
   )
