@@ -5,6 +5,8 @@ import Home from './pages/home.jsx'
 import Login from './pages/login.jsx'
 import App from './App.jsx'
 import './index.css'
+import { MoviesProvider } from './context/MoviesContext.jsx'
+import DetailedMovie from './pages/detailedMovie.jsx'
 
 const router = createBrowserRouter([
   {
@@ -12,12 +14,16 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: '/login',
+        element: <Login />,
+      },
+      {
         path: '/',
         element: <Home />,
       },
       {
-        path: '/login',
-        element: <Login />,
+        path: '/movie/:id',
+        element: <DetailedMovie />,
       },
     ],
   }
@@ -25,6 +31,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <MoviesProvider>
+      <RouterProvider router={router} />
+    </MoviesProvider>
   </StrictMode>,
 )
