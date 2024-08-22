@@ -1,11 +1,19 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import avengersWallpaper from '../assets/avengers.jpg'
+import { useContext } from 'react'
+import { MoviesContext } from '../context/MoviesContext'
 
 export default function CardMovie({movieName, movieData, moviePoster, movieAlt}){
+
+  const { dataMovies } = useContext(MoviesContext)
+  const { results } = dataMovies
+  const { id } = useParams()
+  console.log(id);
+  
   return (
     <div className="h-44 w-36 rounded-xl hover:h-56 hover:w-52 transition-all">
-      <Link to={`/movie/{id}`}>
+      <Link to={`/movie/${results.id}`}>
         <img src={moviePoster == undefined  ?  moviePoster : avengersWallpaper} alt={movieAlt}
         className='object-cover scale-100 h-full w-full rounded-xl'/>
         <p className='font-bold text-black pt-5'>{movieName}</p>

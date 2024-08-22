@@ -9,7 +9,11 @@ export default {
       colors:{
         primaryColor: "#312e81",
         secondaryColor: "#315e91",
-    }},
+    },
+      backgroundImage:{
+        "wallpaper-movies" : "url('../../assets/joker-wallpaper.jpg')"
+      }
+  },
   },
   plugins: [],
 }
